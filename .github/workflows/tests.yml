@@ -1,0 +1,26 @@
+name: Audit
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions: {}
+
+jobs:
+  audit:
+    runs-on: macos-26
+    permissions:
+      contents: read
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@4790763c0a3ba4036f72634dc079c4a7dfcd4878 # 2026.10.19.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: brew test-bot --only-tap-syntax
+
+      - run: brew audit --cask --online --strict yavno/tap/speechtext
+
+      - run: brew livecheck --cask yavno/tap/speechtext
