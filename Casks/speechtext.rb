@@ -17,6 +17,8 @@ cask "speechtext" do
 
   app "SpeechText.app"
 
+  uninstall quit: "app.speech-text.SpeechText"
+
   zap trash: [
     "~/Library/Application Support/SpeachText",
     "~/Library/Application Support/SpeechText",
