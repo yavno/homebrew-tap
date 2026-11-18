@@ -1,6 +1,6 @@
 cask "speechtext" do
-  version "0.10.0"
-  sha256 "b74f424b2359af7f198a2aed70e726b24789299ff49c7475add4ce17e1d33434"
+  version "0.11.0"
+  sha256 "b090b15ddc3a1b6a07b4cbaa0270fe26a743d090df7a1ef7384d193af4ba3e8e"
 
   url "https://github.com/yavno/speech-text/releases/download/v#{version}/SpeechText-#{version}.dmg"
   name "SpeechText"
